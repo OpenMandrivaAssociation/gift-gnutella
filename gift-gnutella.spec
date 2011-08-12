@@ -13,6 +13,9 @@ Source0:        %{name}-%{version}.tar.bz2
 Requires:	gift
 BuildRequires:	db4-devel
 BuildRequires:	gift-devel
+BuildRequires:	libxml2-devel
+BuildRequires:	magic-devel
+BuildRequires:	zlib-devel
 BuildRoot:      %{_tmppath}/%{name}-buildroot
 
 %description
@@ -22,7 +25,7 @@ Gnutella network plugin for giFT file transfer.
 %setup -q
 
 %build
-%configure2_5x
+%configure2_5x --with-libxml
 %make
 
 %install
